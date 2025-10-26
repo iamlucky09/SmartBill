@@ -15,21 +15,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
-    path('api/auth/register/', RegisterView.as_view()),
-    path('api/auth/login/', LoginView.as_view()),
-    path('api/auth/logout/', LogoutView.as_view()),
-    path('api/auth/refresh/', TokenRefreshView.as_view()),
-    path('api/auth/profile/', UserProfileView.as_view()),
-    path('api/products/', include('products.urls')),
-    path('api/customers/', include('customers.urls')),
-    path('api/billing/', include('billing.urls')),
-    path('api/reports/', include('reports.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-ghfygdfghjjhghjkkkkkkkk
+    path('',include('Products.urls')),
+    path('',include('Customers.urls'))
+    # path('api/', include(router.urls)),
+    # path('api/auth/register/', RegisterView.as_view()),
+    # path('api/auth/login/', LoginView.as_view()),
+    # path('api/auth/logout/', LogoutView.as_view()),
+    # path('api/auth/refresh/', TokenRefreshView.as_view()),
+    # path('api/auth/profile/', UserProfileView.as_view()),
+    # path('api/products/', include('products.urls')),
+    # path('api/customers/', include('customers.urls')),
+    # path('api/billing/', include('billing.urls')),
+    # path('api/reports/', include('reports.urls')),
+]
+#  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
