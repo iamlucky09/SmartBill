@@ -32,3 +32,4 @@ urlpatterns = [
     path('api/billing/', include('billing.urls')),
     path('api/reports/', include('reports.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+ghfygdfghjjhghjkkkkkkkk
